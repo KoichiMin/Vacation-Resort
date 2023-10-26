@@ -1,0 +1,36 @@
+.hiker-image{
+    width: 100%;
+    opacity: 0.9;
+    object-fit: cover;
+}
+
+/* .image-header{
+    font-family: 'Bitter', serif;
+
+} */
+
+@media (max-width: 767px) {
+    .hiker-image {
+        height: 400px; 
+        opacity: 0.9;
+    }
+    .image-header{
+        font-size: 30px;
+        /* font-family: 'Lato', sans-serif; */
+    }
+}
+
+@media (min-width: 767px) {
+    .image-header{
+        font-size: 50px;
+        margin-top: 120px;
+        /* font-family: 'Lato', sans-serif; */
+    }
+}
+
+
+@media (min-width: 1150px) {
+    .hiker-image {
+        height: 620px;
+        opacity: 0.9;
+    }

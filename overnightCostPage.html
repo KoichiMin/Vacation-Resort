@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html">Vacation Resort</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" href="overnightCostPage.html">Reservation</a>
+                        <a class="nav-link" href="#">Restaurants</a>
+                        <a class="nav-link" href="#">Car Rental</a>
+                        <a class="nav-link disabled" aria-disabled="true">Activities</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+    </header>
+
+    <div class="container mt-5 ">
+        <div class="row justify-content-center align-items-center ">
+            <div class="col-md-6 ">
+                <div class="card card shadow">
+                    <div class="card-header">
+                        <h3 class="text-center">Make Reservation</h3>
+                    </div>
+                    <div class="card-body">
+                        <form>
+
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" class="form-control" id="name"
+                                    placeholder="Enter your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" class="form-control" id="email" placeholder="Enter your Email"
+                                    required>
+                            </div>
+                            <div class="form-group">
+                                <label for="checkIn">Check-In Dates</label>
+                                <input type="date" class="form-control" id="checkIn"
+                                    required>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="numberOfDays" class="form-label">Number of Days</label>
+                                <input type="number" class="form-control" id="numberOfDays" name="numberOfDays" min="1" max="28">
+                            </div>
+                            <div class="mb-4 ">
+                                <label class="form-label">Bed Size Option </label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name=king" id="king"
+                                        value="king">
+                                    <label class="form-check-label" for="king">
+                                        king
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="queen" id="queen" value="queen">
+                                    <label class="form-check-label" for="queen">
+                                        Queen
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="twoBedroom" id="twoBedroom"
+                                        value="twoBedroom">
+                                    <label class="form-check-label" for="twoBedroom">
+                                        2-Bedroom Suite
+                                    </label>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label for="numAdults" class="form-label">Number of Adults</label>
+                                <input type="number" class="form-control" id="numAdults" name="numAdults" min="1" max="28">
+                            </div>
+                            <div class="form-group">
+                                <label for="numKids" class="form-label">Number of Kids</label>
+                                <input type="number" class="form-control" id="numKids" name="numKids" min="1" max="28">
+                            </div>
+
+
+                            <div class="mb-4 ">
+                                <label class="form-label">Discount Options</label>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name=none" id="none"
+                                        value="none">
+                                    <label class="form-check-label" for="none">
+                                        None
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="aaa" id="aaa" value="aaa">
+                                    <label class="form-check-label" for="aaa">
+                                        AAA
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="military" id="military"
+                                        value="military">
+                                    <label class="form-check-label" for="military">
+                                        Military
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <div class="text-center p-3" >
+                                <button type="submit" class="btn btn-primary btn-block" id="reservationBtn">Reserve</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="scripts/overnightCostPage.js"></script>
+</body>
+</html>
