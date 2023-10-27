@@ -6,7 +6,23 @@ window.onload = function(){
         event.preventDefault(); 
         estimateCost();
     }
+
+    const modalBtn = document.getElementById("modal");
+    modalBtn.onclick = function(event){
+        event.preventDefault();
+        confirmationNum()
+    }
+
 }
+
+// confirmation info to display 
+let confirmationMonth;
+let confirmationYear;
+let confirmationStay;
+let confirmationAdults;
+let confirmationKids;
+
+
 
 function estimateCost(){
     const roomTypes = {
@@ -43,18 +59,29 @@ function estimateCost(){
     bedsideOption = bedsideOption.value
     // console.log(typeof bedsideOption, roomTypes[bedsideOption].capacity)
     
+
     // calculate total amount of guests
     const numAdults = Number(document.getElementById("numAdults").value);
     const numKids = Number( document.getElementById("numKids").value);
     const totalGuests = numAdults + numKids;
-    // console.log(totalGuests)
+    confirmationAdults = numAdults;
+    confirmationKids = numKids;
+
+
 
     // send message if total amount of guest is higher than capacity of bedroom
     if(roomTypes[bedsideOption].capacity < totalGuests){
         const messageDiv = document.getElementById("messageDiv");
         messageDiv.innerText = "The room you selected will not hold your party"
+
+        // remove cost Indo 
         const costInfo = document.getElementById("costInfo");
         costInfo.style.display = "none";
+        
+        // remove modal button
+        const modalButton = document.getElementById("modal");
+        modalButton.style.display = "none";
+
     } else{
         const messageDiv = document.getElementById("messageDiv");
         messageDiv.innerText = "";
@@ -65,6 +92,8 @@ function estimateCost(){
         const checkIn =  document.getElementById("checkIn");
         const dateString = checkIn.value;
         const date = new Date(dateString);
+        confirmationMonth = date.getMonth() + 1;
+        confirmationYear = date.getFullYear();
         const findMonth = months[date.getMonth()];
         // console.log( findMonth);
 
@@ -80,10 +109,11 @@ function estimateCost(){
 
         // find number of Days user staying
         const numDays = Number(document.getElementById("numDays").value);
+        confirmationStay = numDays
 
         // original cost 
         const originalCost = numDays * roomTypes[bedsideOption][season]
-        console.log(originalCost)
+        
 
         // find discounts
         let discountAmount;
@@ -110,7 +140,12 @@ function estimateCost(){
 
         //final cost 
         const finalCost = taxes + discountedRoomCost
-        console.log(finalCost)
+
+        // display modal button
+        const modalButton = document.getElementById("modal");
+        modalButton.style.display = "block";
+
+        // console.log(finalCost)
         document.getElementById("originalRoomCost").innerText = "$" + originalCost.toFixed(2);
         document.getElementById("discountDisplay").innerText = "$" + discountDisplay.toFixed(2);
         document.getElementById("discountedRoomCost").innerText = "$" + discountedRoomCost.toFixed(2)
@@ -118,4 +153,15 @@ function estimateCost(){
         document.getElementById("finalCost").innerText = "$" + finalCost.toFixed(2);
 
     }
+}
+
+
+function confirmationNum(){
+    const name = document.getElementById("name").value;
+    const confirmationName = name.slice(0, 3).toUpperCase();
+
+    const confirmationDetails = confirmationName + "-" + confirmationMonth + confirmationYear + "-" + confirmationStay + ":" + confirmationAdults + ":" + confirmationKids
+    // console.log(confirmationDetails)
+    document.getElementById("confirmationInfo").innerText = confirmationDetails
+
 }
