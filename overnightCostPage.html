@@ -59,25 +59,25 @@
 
                             <div class="form-group">
                                 <label for="numberOfDays" class="form-label">Number of Days</label>
-                                <input type="number" class="form-control" id="numberOfDays" name="numberOfDays" min="1" max="28">
+                                <input type="number" class="form-control" id="numDays" name="numberOfDays" min="1" max="28">
                             </div>
                             <div class="mb-4 ">
                                 <label class="form-label">Bed Size Option </label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name=king" id="king"
+                                    <input class="form-check-input" type="radio" name="bedside" id="king"
                                         value="king">
                                     <label class="form-check-label" for="king">
                                         king
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="queen" id="queen" value="queen">
+                                    <input class="form-check-input" type="radio" name="bedside" id="queen" value="queen">
                                     <label class="form-check-label" for="queen">
                                         Queen
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="twoBedroom" id="twoBedroom"
+                                    <input class="form-check-input" type="radio" name="bedside" id="twoBedroom"
                                         value="twoBedroom">
                                     <label class="form-check-label" for="twoBedroom">
                                         2-Bedroom Suite
@@ -88,31 +88,31 @@
 
                             <div class="form-group">
                                 <label for="numAdults" class="form-label">Number of Adults</label>
-                                <input type="number" class="form-control" id="numAdults" name="numAdults" min="1" max="28">
+                                <input type="number" class="form-control" id="numAdults" name="numAdults" min="1" max="4">
                             </div>
                             <div class="form-group">
                                 <label for="numKids" class="form-label">Number of Kids</label>
-                                <input type="number" class="form-control" id="numKids" name="numKids" min="1" max="28">
+                                <input type="number" class="form-control" id="numKids" name="numKids" min="0" max="4">
                             </div>
 
 
                             <div class="mb-4 ">
                                 <label class="form-label">Discount Options</label>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name=none" id="none"
+                                    <input class="form-check-input" type="radio" name="discount" id="none"
                                         value="none">
                                     <label class="form-check-label" for="none">
                                         None
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="aaa" id="aaa" value="aaa">
+                                    <input class="form-check-input" type="radio" name="discount" id="aaa" value="aaa">
                                     <label class="form-check-label" for="aaa">
                                         AAA
                                     </label>
                                 </div>
                                 <div class="form-check">
-                                    <input class="form-check-input" type="radio" name="military" id="military"
+                                    <input class="form-check-input" type="radio" name="discount" id="military"
                                         value="military">
                                     <label class="form-check-label" for="military">
                                         Military
@@ -121,9 +121,23 @@
                             </div>
                             
                             <div class="text-center p-3" >
-                                <button type="submit" class="btn btn-primary btn-block" id="reservationBtn">Reserve</button>
+                                <button type="submit" class="btn btn-primary btn-block" id="reservationBtn">Estimate stay cost</button>
                             </div>
                         </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-3 p-3">
+                <div class="container bg-light py-3 card shadow">
+                    <div id="messageDiv" style="color:red"></div>
+                    <div style="display: block" id="costInfo">
+                        <p>Original Room Cost: <span id="originalRoomCost">$0.00</span></p>
+                        <p>Discount: <span id="discountDisplay">$0.00</span></p>
+                        <p>Discounted Room Cost: <span id="discountedRoomCost">$0.00</span></p>
+                        <p>Taxes: <span id="taxes">$0.00</span></p>
+                        <hr>
+                        <p>Total Due <span class="price" id="finalCost" style="color:black"><b>$0.00$</b></span></p>
                     </div>
                 </div>
             </div>
